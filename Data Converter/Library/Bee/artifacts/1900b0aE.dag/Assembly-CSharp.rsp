@@ -377,6 +377,11 @@
 -analyzer:"E:/Unity/Unity 2022.3.18f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"E:/Unity/Unity 2022.3.18f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Old Scene/Compay Selector.cs"
+"Assets/Scripts/Old Scene/DataManager.cs"
+"Assets/Scripts/Old Scene/Dimension Selector.cs"
+"Assets/Scripts/Old Scene/Game Manager Old Scene.cs"
+"Assets/Scripts/Old Scene/UI Manager.cs"
+"Assets/Scripts/Old Scene/Weight Selector.cs"
 -langversion:9.0
 
 /deterministic
