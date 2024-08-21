@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public WeightSelector weightSelector;
 
     public TableGenerator tableGenerator;
+    public ExtendedTableGenerator extendedTableGenerator;
 
     public TMP_InputField lengthInput;
     public TMP_InputField widthInput;
@@ -149,6 +150,21 @@ public class UIManager : MonoBehaviour
         {
             SaveData saveData = dataManager.LoadAllData();
             tableGenerator.GenerateTable(saveData.companyDataList);
+            
         }
+        if(extendedTableGenerator != null)
+        {
+            SaveData saveData = dataManager.LoadAllData();
+            if(saveData != null && saveData.companyDataList != null)
+            {
+                Debug.Log("Populating new table with " + saveData.companyDataList.Count + "entries");
+                extendedTableGenerator.GenerateTableWithSerial(saveData.companyDataList);
+            }
+            else
+            {
+                Debug.LogError("No Data to populate the table");
+            }
+        }
+        
     }
 }
