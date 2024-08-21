@@ -382,6 +382,7 @@
 "Assets/Scripts/Old Scene/DataManager.cs"
 "Assets/Scripts/Old Scene/Dimension Selector.cs"
 "Assets/Scripts/Old Scene/Game Manager Old Scene.cs"
+"Assets/Scripts/Old Scene/Table Generator.cs"
 "Assets/Scripts/Old Scene/UI Manager.cs"
 "Assets/Scripts/Old Scene/Weight Selector.cs"
 -langversion:9.0

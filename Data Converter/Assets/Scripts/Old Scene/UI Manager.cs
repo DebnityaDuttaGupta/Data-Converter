@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public DimensionSelector dimensionsSelector;
     public WeightSelector weightSelector;
 
+    public TableGenerator tableGenerator;
+
     public TMP_InputField lengthInput;
     public TMP_InputField widthInput;
     public TMP_InputField heightInput;
@@ -30,6 +32,7 @@ public class UIManager : MonoBehaviour
         deleteButton.interactable = false;
 
         LoadUnitSetting();
+        PopulateTable();
     }
 
     public void OnCompanySelectionChanged()
@@ -62,6 +65,7 @@ public class UIManager : MonoBehaviour
         {
             ClearDataEntryFields();
         }
+
     }
 
     private void UpdateDataForUnitSettings()
@@ -88,6 +92,7 @@ public class UIManager : MonoBehaviour
             };
 
             dataManager.SaveData(currentCompanyKey, data, currentUnitSettings);
+            PopulateTable();
         }
     }
 
@@ -97,6 +102,7 @@ public class UIManager : MonoBehaviour
         {
             dataManager.DeleteCompantData(currentCompanyKey);
             ClearDataEntryFields();
+            PopulateTable();
         }
     }
 
@@ -135,5 +141,14 @@ public class UIManager : MonoBehaviour
         heightInput.interactable = isEnabled;
         payloadInput.interactable = isEnabled;
         dryWeightInput.interactable = isEnabled;
+    }
+
+    private void PopulateTable()
+    {
+        if (tableGenerator != null)
+        {
+            SaveData saveData = dataManager.LoadAllData();
+            tableGenerator.GenerateTable(saveData.companyDataList);
+        }
     }
 }
